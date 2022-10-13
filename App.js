@@ -21,13 +21,13 @@ const Pratos = [
         image: require('./assets/img/prato2.jpg'),
         title: 'Star-Completo',
         preco: 'R$39,90',
-        ingredientes: 'Linguiça, alface, tomate, cenoura, ovo'
+        ingredientes: 'Linguica, alface, tomate, cenoura, ovo'
     },
     {
         image: require('./assets//img/prato3.jpg'),
         title: 'Star-Tradicional',
         preco: 'R$27,90',
-        ingredientes: 'Carne de boi, arroz, tomate, alface, feijão'
+        ingredientes: 'Carne de boi, arroz, tomate, alface, feijao'
     },
     {
         image: require('./assets/img/prato4.jpg'),
