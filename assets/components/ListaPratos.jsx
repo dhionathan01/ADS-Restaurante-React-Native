@@ -2,31 +2,52 @@ import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { Image } from '@rneui/themed';
 
-const images = [
-    { name: require('../img/prato1.jpg') },
-    { name: require('../img/prato2.jpg') },
-    { name: require('../img/prato3.jpg') },
-
-];
+const Pratos = [
+    {
+        image: require('../img/prato1.jpg'),
+        title: 'Star-Fitness',
+        preco: 'R$22,90',
+    },
+    {
+        image: require('../img/prato2.jpg'),
+        title: 'Star-Completo',
+        preco: 'R$39,90'
+    },
+    {
+        image: require('../img/prato3.jpg'),
+        title: 'Star-Tradicional',
+        preco: 'R$27,90'
+    },
+    {
+        image: require('../img/prato4.jpg'),
+        title: 'Star-Fritas',
+        preco: 'R$34,90'
+    },
+    {
+        image: require('../img/prato-executivo.jpg'),
+        title: 'Star-Executivo',
+        preco: 'R$47,90'
+    }
+]
 
 const ListaPratos = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
-                Pratos do dia
+                Pratos do dia:
             </Text>
             <FlatList
                 horizontal
-                data={images}
+                data={Pratos}
                 renderItem={({ item }) =>
                     <View style={styles.item}>
                         <Image
-                            source={item.name}
+                            source={item.image}
                             style={styles.fotoUnica}
-                            resizeMode="cover"
                         />
+                        <Text style={styles.legenda}>{item.title}</Text>
+                        <Text style={styles.preco}>{item.preco}</Text>
                     </View>}
-                showsHorizontalScrollIndicator={false}
                 style={styles.foto}
             />
         </View>
@@ -35,7 +56,7 @@ const ListaPratos = () => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#392620',
+        backgroundColor: '#2A2A2A',
     },
     title: {
         color: '#FFF',
@@ -44,12 +65,24 @@ const styles = StyleSheet.create({
         paddingTop: 24,
         paddingLeft: 24,
     },
+    legenda: {
+        color: '#FFF',
+        fontSize: 10,
+        fontFamily: 'MontserratBold',
+        fontWeight: 'normal',
+    },
+    preco: {
+        color: '#FFF',
+        fontSize: 13,
+        fontFamily: 'MontserratBold',
+        fontWeight: 'normal',
+    },
     item: {
         margin: 10,
     },
     fotoUnica: {
-        width: 200,
-        height: 200,
+        width: 125,
+        height: 125,
         borderRadius: 15,
     },
     foto: {

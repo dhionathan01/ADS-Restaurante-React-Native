@@ -6,7 +6,7 @@ const Logo = () => {
   const window = useWindowDimensions();
   return (
     <Tile
-      imageSrc={require('../img/restaurante.jpg')}
+      imageSrc={require('../img/restaurante2.jpg')}
       titleStyle={{ fontSize: 17, fontWeight: '', color: 'white' }}
       featured
       width={window.width}
