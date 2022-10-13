@@ -1,13 +1,15 @@
 import * as React from 'react'
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Topo from "./assets/components/Topo";
 import Logo from './assets/components/Logo';
 import ListaPratos from './assets/components/ListaPratos';
-import { Montserrat_400Regular, Montserrat_700Bold, useFonts, } from '@expo-google-fonts/montserrat';
+import { useFonts } from 'expo-font';
+import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import AppLoading from 'expo-app-loading';
 import Menu from './assets/components/Menu';
 import { ScrollView } from 'react-native-gesture-handler';
+import Rodape from './assets/components/Rodape';
 const Pratos = [
     {
         image: require('./assets/img/prato1.jpg'),
@@ -44,9 +46,10 @@ const Pratos = [
 
 export default function App() {
   const [fonteCarregada] = useFonts({
+    "Bg": require('./assets/fonts/BubbleGum.ttf'),
     "MontserratRegular": Montserrat_400Regular,
     "MontserratBold": Montserrat_700Bold,
-    "bublegum": require('./assets/fonts/BubbleGum.ttf'),
+    
   });
 
   if (!fonteCarregada) {
@@ -58,8 +61,9 @@ export default function App() {
             <View>
             <Topo/>
             <Logo/>
-            <ListaPratos/>
+                <ListaPratos Pratos={Pratos} />
                 <Menu Pratos={Pratos} />
+                <Rodape></Rodape>    
             </View>
         </ScrollView>    
       </SafeAreaProvider>

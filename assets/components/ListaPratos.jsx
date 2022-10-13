@@ -2,35 +2,8 @@ import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { Image } from '@rneui/themed';
 
-const Pratos = [
-    {
-        image: require('../img/prato1.jpg'),
-        title: 'Star-Fitness',
-        preco: 'R$22,90',
-    },
-    {
-        image: require('../img/prato2.jpg'),
-        title: 'Star-Completo',
-        preco: 'R$39,90'
-    },
-    {
-        image: require('../img/prato3.jpg'),
-        title: 'Star-Tradicional',
-        preco: 'R$27,90'
-    },
-    {
-        image: require('../img/prato4.jpg'),
-        title: 'Star-Fritas',
-        preco: 'R$34,90'
-    },
-    {
-        image: require('../img/prato-executivo.jpg'),
-        title: 'Star-Executivo',
-        preco: 'R$47,90'
-    }
-]
 
-const ListaPratos = () => {
+const ListaPratos = ({ Pratos }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -64,6 +37,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         paddingTop: 24,
         paddingLeft: 24,
+        fontFamily: 'Bubblegum'
     },
     legenda: {
         color: '#FFF',

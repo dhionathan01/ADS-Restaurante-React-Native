@@ -8,10 +8,10 @@ const Menu = ({Pratos}) => {
         <Card>
             <Card.Title>Menu</Card.Title>
             <Card.Divider />
-            {Pratos.map((item, i) => {
+            {Pratos.map((item) => {
                 return (
                     <View style={styles.container}>            
-                    <View key={i}>
+                    <View>
                         <Image
                             style={styles.image}
                             resizeMode="cover"
